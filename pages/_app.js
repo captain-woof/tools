@@ -1,7 +1,16 @@
-import '../styles/globals.css'
+import Fonts from "../components/atoms/fonts"
+import Navbar from "../components/molecules/navbar"
+import ThemeProvider, { BaseStyle } from "../components/providers/theme"
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <ThemeProvider>
+        <Fonts />
+        <BaseStyle />
+        <Navbar />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
+  )
 }
-
-export default MyApp
