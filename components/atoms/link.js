@@ -11,7 +11,7 @@ const Anchor = styled.a`
         overflow: hidden;
         width: fit-content;
         cursor: pointer;
-        display: inline-block;
+        display: inline-flex;
 
         &:hover {
             color: ${theme.colors.primary.main};
@@ -37,16 +37,24 @@ const Anchor = styled.a`
     `)}    
 `
 
-export const Link = ({ id, href, children }) => {
+export const Link = ({ id, href, children, style }) => {
     return (
         <LinkNext href={href}>
-            <Anchor id={id}>{children}</Anchor>
+            <Anchor id={id} style={style}>{children}</Anchor>
         </LinkNext>
     )
 }
 
-export const LinkExternal = ({ id, href, children }) => {
+export const LinkBlock = ({ id, href, children, style }) => {
     return (
-        <Anchor id={id} href={href} target='_blank'>{children}</Anchor>
+        <LinkNext href={href}>
+            <a id={id} style={style}>{children}</a>
+        </LinkNext>
+    )
+}
+
+export const LinkExternal = ({ id, href, children, style }) => {
+    return (
+        <Anchor id={id} href={href} target='_blank' style={style}>{children}</Anchor>
     )
 }
