@@ -11,10 +11,9 @@ const StyledPaper = styled.div`
         `}
         
         ${border && css`
-            border: 0.083rem solid ${theme.colors.primary.main};
-            transition: ${theme.transition('border').normal};
+            border: 1.8px solid ${theme.colors.primary.main};
             &:hover {
-                border: 0.125rem solid ${theme.colors.primary.dark};
+                border: 2px solid ${theme.colors.primary.dark};
             }
         `}
 
@@ -47,7 +46,7 @@ const StyledPaper = styled.div`
 export default function Paper({ children, raiseOnHover = false, border = false, borderRadius = false, style, id }) {
     return (
         <StyledPaper raiseOnHover={raiseOnHover} border={border} borderRadius={borderRadius}
-            style={style} id={id}>
+            style={style} id={id} className='paper'>
             {children}
         </StyledPaper>
     )
