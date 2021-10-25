@@ -81,6 +81,6 @@ export default function Dialog({ children, backdropStyle, dialogBoxStyle, wide, 
                 {children}
             </DialogBox>
         </Backdrop>
-
+        || null
     )
 }
