@@ -5,11 +5,11 @@ const StyledTwoColumnLayout = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    height: 100vh;
     width: 100%;
 
     @media (max-width: 480px){
         flex-direction: column;
+        height: max-content;
     }
 `
 
