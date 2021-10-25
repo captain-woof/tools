@@ -9,7 +9,7 @@ import { useState } from 'react'
 const StyledNavbar = styled.nav`
     ${({ theme }) => css`
         display: flex;
-        position: fixed;
+        position: sticky;
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
@@ -17,7 +17,6 @@ const StyledNavbar = styled.nav`
         background-color: ${theme.colors.background.light};
         height: 4rem;
         width: 100%;
-        position: fixed;
         top: 0;
         left: 0;
         z-index: 10;
