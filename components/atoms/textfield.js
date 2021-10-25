@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const TextfieldWrapper = styled.div`
     position: relative;
-    height: 3rem;
+    height: 2.5rem;
     border-radius: 4px;
     width: 100%;
 `;
@@ -30,19 +30,19 @@ const Label = styled.label`
         position: absolute;
         height: fit-content;
         width: fit-content;
-        top: 1rem;
+        top: 0.45rem;
         left: 1rem;
-        color: ${theme.colors.secondary.dark};
+        color: ${theme.colors.secondary.light};
         cursor: text;
-        transition: ${theme.transition().normal};
+        transition: ${theme.transition().fast};
         background-color: ${bgColor || theme.colors.background.light};
 
         ${Input}:focus + &,
         ${Input}:not(:placeholder-shown) + & {
           font-size: 0.85rem;
-          top: -0.75rem;
+          top: -0.95rem;
           left: 0.75rem;
-          padding: 0.25rem;    
+          padding: 0.25rem;
         }
 
         ${Input}:focus + & {
@@ -51,11 +51,11 @@ const Label = styled.label`
     `}
 `;
 
-export default function Textfield({ name, label, color, bgColor, inputProps }) {
+export default function Textfield({ name, label, color, bgColor, inputProps, style }) {
     return (
-        <TextfieldWrapper>
+        <TextfieldWrapper style={style}>
             <Input id={name} name={name} color={color} autoComplete="off" placeholder=" " {...inputProps}/>
-            <Label for={name} bgColor={bgColor} color={color}>
+            <Label htmlFor={name} bgColor={bgColor} color={color}>
                 {label}
             </Label>
         </TextfieldWrapper>
