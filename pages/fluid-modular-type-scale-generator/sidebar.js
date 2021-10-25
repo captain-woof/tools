@@ -39,35 +39,35 @@ export default function FluidModularSidebar() {
                     type: 'number',
                     min: 0.00,
                     step: 0.01,
-                    value: state.fsBase,
+                    value: state?.fsBase,
                     onChange: (e) => { dispatch({ type: 'SET_FS_BASE', value: e.target.value }) }
                 }} />
                 <TextfieldSuggestive name='fs-factor-min' label='Scale (min)' inputProps={{
                     type: 'number',
                     min: 0.00,
                     step: 0.001,
-                    value: state.fsFactorMin,
+                    value: state?.fsFactorMin,
                     onChange: (e) => { dispatch({ type: 'SET_FS_FACTOR_MIN', value: e.target.value }) }
                 }} datalistItems={modularScale} />
                 <TextfieldSuggestive name='fs-factor-max' label='Scale (max)' inputProps={{
                     type: 'number',
                     min: 0.00,
                     step: 0.001,
-                    value: state.fsFactorMax,
+                    value: state?.fsFactorMax,
                     onChange: (e) => { dispatch({ type: 'SET_FS_FACTOR_MAX', value: e.target.value }) }
                 }} datalistItems={modularScale} />
                 <Textfield name='lh-min' label='Line height (min)' inputProps={{
                     type: 'number',
                     min: 0.00,
                     step: 0.01,
-                    value: state.lhMin,
+                    value: state?.lhMin,
                     onChange: (e) => { dispatch({ type: 'SET_LH_MIN', value: e.target.value }) }
                 }} />
                 <Textfield name='lh-max' label='Line height (max)' inputProps={{
                     type: 'number',
                     min: 0.00,
                     step: 0.01,
-                    value: state.lhMax,
+                    value: state?.lhMax,
                     onChange: (e) => { dispatch({ type: 'SET_LH_MAX', value: e.target.value }) }
                 }} />
             </SidebarContentWrapper>

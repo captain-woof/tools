@@ -102,15 +102,15 @@ const PreviewWrapper = styled.div`
 
 
 export default function Preview() {
-    const { state: { fsBase, fsFactorMin, fsFactorMax, lhMin, lhMax } } = useGlobalState()
+    const { state } = useGlobalState()
 
     return (
         <PreviewWrapper style={{
-            '--fs-base': `${fsBase}px`,
-            '--fs-factor-min': fsFactorMin,
-            '--fs-factor-max': fsFactorMax,
-            '--lh-min': lhMin,
-            '--lh-max': lhMax,
+            '--fs-base': `${state?.fsBase}px`,
+            '--fs-factor-min': state?.fsFactorMin,
+            '--fs-factor-max': state?.fsFactorMax,
+            '--lh-min': state?.lhMin,
+            '--lh-max': state?.lhMax,
             padding: 'var(--sp-500)'
         }}>
             <article>
