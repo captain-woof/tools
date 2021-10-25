@@ -115,6 +115,8 @@ export const BaseStyle = createGlobalStyle`
 
     input, button, textarea, datalist {
         font-family: inherit;
+        border: none;
+        outline: none;
     }
 
     /* Setting margins, paddings and positions*/
