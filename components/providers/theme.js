@@ -8,14 +8,14 @@ const theme = {
             dark: `hsl(211.93,80.28%,41.76%)`
         },
         secondary: {
-            light: `hsl(200.00,19.15%,18.43%)`,
+            light: `hsl(200.00,13.00%,50.00%)`,
             main: `hsl(199.35,18.34%,33.14%)`,
             dark: `hsl(200.00,19.15%,18.43%)`
         },
         background: {
-            light: `hsl(0.00,0.00%,100.0%)`,
-            main: `hsl(0.00,0.00%,98.04%)`,
-            dark: `hsl(0.00,0.00%,96.08%)`
+            light: `hsl(0.00,0.00%,100.00%)`,
+            main: `hsl(0.00,0.00%,100.00%)`,
+            dark: `hsl(0.00,0.00%,98.04%)`
         }
     },
     font: {
@@ -32,7 +32,7 @@ const theme = {
         max: 1.5
     },
     transition: (property = 'all') => ({
-        fast: `${property} 0.25s ease-in-out`,
+        fast: `${property} 0.4s ease-in-out`,
         normal: `${property} 0.5s ease-in-out`,
         slow: `${property} 0.75s ease-in-out`
     })
@@ -124,5 +124,16 @@ export const BaseStyle = createGlobalStyle`
         justify-content: center;
         flex-wrap: nowrap;
         background-color: ${theme.colors.background.main};
+    }
+
+    /* Disabling style on a */
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Setting body content to full width */
+    body > div:first-child {
+        width: 100%;
     }
 `
