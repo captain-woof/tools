@@ -19,7 +19,7 @@ const reducer = (state, payload) => {
 /* Global context */
 const GlobalContext = createContext({})
 
-export const GlobalStateProvider = ({ children }) => {
+export default function GlobalStateProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, {
         /* States for generator */
         fsBase: 16,
