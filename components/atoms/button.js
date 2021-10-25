@@ -26,9 +26,10 @@ const StyledButton = styled.button`
     `)}
 `
 
-export default function Button({ children, primary, buttonProps, small = false, iconEnd }) {
+export default function Button({ children, primary, buttonProps, small = false, iconEnd, iconStart }) {
     return (
         <StyledButton {...buttonProps} primary={primary} small={small}>
+            {iconStart}
             {children}
             {iconEnd}
         </StyledButton>
