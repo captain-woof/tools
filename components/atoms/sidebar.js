@@ -5,7 +5,7 @@ const StyledSidebar = styled.aside`
         position: sticky;
         top: 0;
         left: 0;
-        height: 100%;
+        height: max-content;
         width: 320px;
         border-right: 4px solid ${theme.colors.primary.main};
         background-color: ${theme.colors.background.light};
