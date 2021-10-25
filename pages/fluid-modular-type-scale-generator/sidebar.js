@@ -4,8 +4,9 @@ import { Heading3 } from "../../components/atoms/headings"
 import Textfield from '../../components/atoms/textfield'
 import TextfieldSuggestive from '../../components/molecules/textfield-suggestive'
 import { useGlobalState } from "./globalState"
-
-/* https://sohail-saha.in/blog/posts/how-to-use-fluid-typography-with-modular-scale-in-css */
+import { LinkExternal } from '../../components/atoms/link'
+import Button from "../../components/atoms/button"
+import { RiShareForward2Fill as ExportIcon } from 'react-icons/ri'
 
 // Sidebar contents wrapper (for margin)
 const SidebarContentWrapper = styled.div`
@@ -31,10 +32,12 @@ const modularScale = [
 
 export default function FluidModularSidebar() {
     const { state, dispatch } = useGlobalState()
+
     return (
         <Sidebar>
             <SidebarContentWrapper className='sidebar-content-wrapper'>
                 <Heading3>Fluid-Modular Type scale generator</Heading3>
+                <p>This is a tool to quickly design the base of your design system (CSS) based on my idea of the &apos;Fluid-Modular Type scale&apos;. To know more, <LinkExternal style={{ fontWeight: 600 }} href="https://sohail-saha.in/blog/posts/how-to-use-fluid-typography-with-modular-scale-in-css" >read my blog post.</LinkExternal></p>
                 <Textfield name='fs-base' label='Base size (px)' inputProps={{
                     type: 'number',
                     min: 0.00,
@@ -70,6 +73,9 @@ export default function FluidModularSidebar() {
                     value: state?.lhMax,
                     onChange: (e) => { dispatch({ type: 'SET_LH_MAX', value: e.target.value }) }
                 }} />
+                <Button primary iconEnd={<ExportIcon />} buttonProps={{ onClick: () => { dispatch({ type: 'SET_EXPORT_DIALOG_OPEN', isOpen: true }) } }}>
+                    Export
+                </Button>
             </SidebarContentWrapper>
         </Sidebar>
     )

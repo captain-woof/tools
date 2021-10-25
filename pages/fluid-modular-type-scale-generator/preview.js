@@ -5,7 +5,7 @@ const PreviewWrapper = styled.div`
     /* Actual style (not part of preview)*/
     ${({theme}) => (css`
         flex-grow: 1;
-        height: calc(100vh - 4rem);
+        height: max-content;
         overflow-y: auto;
         scrollbar-width: thin;
         scrollbar-width: thin;
@@ -22,6 +22,10 @@ const PreviewWrapper = styled.div`
         }
         ::-webkit-scrollbar-thumb:hover {
           background: ${theme.colors.secondary.light};
+        }
+
+        @media (max-width: 480px){
+            height: 70vh;
         }
     `)}
     
@@ -65,6 +69,11 @@ const PreviewWrapper = styled.div`
     --sp-800: calc(var(--sp-factor)* 5);
     --sp-900: calc(var(--sp-factor)* 6);
     /* Applying calculated values to children elements */
+    & p.caption {
+        font-size: var(--fs-300);
+        line-height: var(--lh-max);
+    }
+
     & p {
         font-size: var(--fs-400);
         line-height: var(--lh-max);
@@ -105,7 +114,7 @@ export default function Preview() {
     const { state } = useGlobalState()
 
     return (
-        <PreviewWrapper style={{
+        <PreviewWrapper className='preview' style={{
             '--fs-base': `${state?.fsBase}px`,
             '--fs-factor-min': state?.fsFactorMin,
             '--fs-factor-max': state?.fsFactorMax,
@@ -135,6 +144,10 @@ export default function Preview() {
                 <section>
                     <h5>Heading 5</h5>
                     <p>Nulla velit consequat duis pariatur duis magna nulla culpa sit magna amet nisi magna.</p>
+                </section>
+                <section>
+                    <p className='caption'>Caption</p>
+                    <p className='caption'>CSS is beautiful!</p>
                 </section>
             </article>
         </PreviewWrapper>
