@@ -136,4 +136,24 @@ export const BaseStyle = createGlobalStyle`
     body > div:first-child {
         width: 100%;
     }
+
+    /* Scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: ${theme.colors.primary.light};
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: ${theme.colors.background.light};
+      margin: 16px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: ${theme.colors.primary.main};
+      border-radius: 10rem;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: ${theme.colors.primary.light};
+      border-radius: 10rem;
+    }
 `
