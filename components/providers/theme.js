@@ -146,6 +146,7 @@ export const BaseStyle = createGlobalStyle`
 
     ::-webkit-scrollbar {
         width: 10px;
+        height: 10px;
     }
     ::-webkit-scrollbar-track {
       background: ${theme.colors.background.light};
