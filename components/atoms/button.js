@@ -13,6 +13,11 @@ const StyledButton = styled.button`
         font-weight: 500;
         cursor: pointer;
         box-shadow: 0 0 4px ${theme.colors.secondary.light};
+        font-size: ${small ? '0.9rem' : '1rem'};
+
+        &:hover {
+            background-color: ${primary ? theme.colors.primary.light : theme.colors.secondary.light};
+        }
 
         &:active {
             background-color: ${primary ? theme.colors.primary.dark : theme.colors.secondary.dark};
