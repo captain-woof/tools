@@ -117,6 +117,7 @@ export const BaseStyle = createGlobalStyle`
         font-family: inherit;
         border: none;
         outline: none;
+        font-size: inherit;
     }
 
     /* Setting margins, paddings and positions*/
