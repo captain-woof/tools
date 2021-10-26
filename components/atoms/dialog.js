@@ -2,6 +2,20 @@ import styled, { css } from "styled-components"
 import { IoMdClose } from 'react-icons/io'
 import { useCallback } from "react"
 
+const Wrapper = styled.div`
+    position: fixed;        
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    z-index: 100;
+    margin: 0;
+`
+
 const Backdrop = styled.div`
     ${({ theme }) => css`
         /* Appear animation */
@@ -14,17 +28,11 @@ const Backdrop = styled.div`
                 opacity: 0.95;
             }
         }
-
-        position: fixed;        
-        height: 100vh;
-        width: 100vw;
+        position: absolute;        
+        height: 100%;
+        width: 100%;
         top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
-        z-index: 100;
+        left: 0;        
         background-color: ${theme.colors.secondary.dark};
         animation: appear 0.5s linear both;
         margin: 0;
@@ -75,12 +83,13 @@ export default function Dialog({ children, backdropStyle, dialogBoxStyle, wide, 
 
     return (
         isOpen &&
-        <Backdrop style={backdropStyle} className='dialog-backdrop' onClick={handleClose}>
+        <Wrapper>
+            <Backdrop style={backdropStyle} className='dialog-backdrop' onClick={handleClose}/>
             <DialogBox style={dialogBoxStyle} className='dialog-box' wide={wide}>
                 <CloseIcon onClick={handleClose} />
                 {children}
             </DialogBox>
-        </Backdrop>
+        </Wrapper>
         || null
     )
 }
