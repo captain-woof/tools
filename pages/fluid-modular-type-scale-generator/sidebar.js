@@ -50,7 +50,7 @@ export default function FluidModularSidebar() {
         <Sidebar>
             <SidebarContentWrapper className='sidebar-content-wrapper'>
                 <Heading3>Fluid-Modular Type scale generator</Heading3>
-                <p>This is a tool to quickly design the base of your design system (CSS) based on my idea of the &apos;Fluid-Modular Type scale&apos;. To know more, <LinkExternal style={{ fontWeight: 600 }} href="https://sohail-saha.in/blog/posts/how-to-use-fluid-typography-with-modular-scale-in-css" >read my blog post.</LinkExternal></p>
+                <p>This is a tool to quickly generate the CSS stylesheet of your design system using my idea of the &apos;Fluid-Modular Type scale&apos;. To know more, <LinkExternal style={{ fontWeight: 600 }} href="https://sohail-saha.in/blog/posts/how-to-use-fluid-typography-with-modular-scale-in-css" >read my blog post.</LinkExternal></p>
                 <Textfield name='fs-base' label='Base size (px)' inputProps={{
                     type: 'number',
                     min: 0.00,
