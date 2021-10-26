@@ -43,8 +43,8 @@ const DialogBox = styled.div`
     ${({ theme, wide }) => css`
         position: relative;
         z-index: 101;
-        height: ${wide ? '60vh' : 'clamp(280px, 30vh, 320px)'};
-        width: ${wide ? '60vw' : 'clamp(320px ,30vw, 360px)'};
+        height: ${wide ? '75vh' : 'clamp(280px, 30vh, 320px)'};
+        width: ${wide ? '85vw' : 'clamp(320px ,30vw, 360px)'};
         background-color: ${theme.colors.background.light};
         box-shadow: 0 16px 24px ${theme.colors.secondary.dark};
         padding: var(--sp-400);
