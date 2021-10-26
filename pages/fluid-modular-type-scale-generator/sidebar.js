@@ -7,6 +7,7 @@ import { useGlobalState } from "./globalState"
 import { LinkExternal } from '../../components/atoms/link'
 import Button from "../../components/atoms/button"
 import { RiShareForward2Fill as ExportIcon } from 'react-icons/ri'
+import { BsEraserFill as ResetIcon } from 'react-icons/bs'
 
 // Sidebar contents wrapper (for margin)
 const SidebarContentWrapper = styled.div`
@@ -16,6 +17,18 @@ const SidebarContentWrapper = styled.div`
     & > * + * {
         margin-top: var(--sp-500);
     }
+`
+
+// Button container
+const ButtonsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    width: 100%;
+    margin-top: var(--sp-500);
 `
 
 // The modular scale
@@ -73,9 +86,16 @@ export default function FluidModularSidebar() {
                     value: state?.lhMax,
                     onChange: (e) => { dispatch({ type: 'SET_LH_MAX', value: e.target.value }) }
                 }} />
-                <Button primary iconEnd={<ExportIcon />} buttonProps={{ onClick: () => { dispatch({ type: 'SET_EXPORT_DIALOG_OPEN', isOpen: true }) } }}>
-                    Export
-                </Button>
+                <ButtonsContainer>
+                    <Button small iconEnd={<ResetIcon />} buttonProps={{
+                        onClick: () => { dispatch({ type: "RESET" }) }
+                    }}>
+                        Reset
+                    </Button>
+                    <Button small primary iconEnd={<ExportIcon />} buttonProps={{ onClick: () => { dispatch({ type: 'SET_EXPORT_DIALOG_OPEN', isOpen: true }) } }}>
+                        Export
+                    </Button>
+                </ButtonsContainer>
             </SidebarContentWrapper>
         </Sidebar>
     )

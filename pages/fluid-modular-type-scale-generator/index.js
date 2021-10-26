@@ -7,12 +7,12 @@ import ExportDialog from "./exportDialog"
 export default function FluidModularTypeScale() {
 
     return (
-        <TwoColumnLayout>
-            <GlobalStateProvider>
+        <GlobalStateProvider>
+            <TwoColumnLayout>
                 <FluidModularSidebar />
                 <Preview />
-                <ExportDialog />
-            </GlobalStateProvider>
-        </TwoColumnLayout>
+            </TwoColumnLayout>
+            <ExportDialog />
+        </GlobalStateProvider>
     )
 }
