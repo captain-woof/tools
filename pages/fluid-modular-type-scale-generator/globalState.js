@@ -1,5 +1,16 @@
 import { createContext, useContext, useReducer } from "react";
 
+/* Initial state */
+const initialState = {
+    /* States for generator */
+    fsBase: 16,
+    fsFactorMin: 1.2,
+    fsFactorMax: 1.333,
+    lhMin: 1.2,
+    lhMax: 1.5,
+    exportDialogOpen: false
+}
+
 /* Reducer */
 const reducer = (state, payload) => {
     switch (payload.type) {
@@ -15,6 +26,8 @@ const reducer = (state, payload) => {
             return { ...state, lhMax: payload.value }
         case 'SET_EXPORT_DIALOG_OPEN':
             return { ...state, exportDialogOpen: payload.isOpen }
+        case 'RESET':
+            return initialState
     }
 }
 
@@ -22,15 +35,7 @@ const reducer = (state, payload) => {
 const GlobalContext = createContext({})
 
 export default function GlobalStateProvider({ children }) {
-    const [state, dispatch] = useReducer(reducer, {
-        /* States for generator */
-        fsBase: 16,
-        fsFactorMin: 1.2,
-        fsFactorMax: 1.333,
-        lhMin: 1.2,
-        lhMax: 1.5,
-        exportDialogOpen: false
-    })
+    const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
         <GlobalContext.Provider value={{ state, dispatch }}>
