@@ -105,7 +105,7 @@ export const BaseStyle = createGlobalStyle`
 
     /* Remove margins, paddings and setting default font-weight */
 
-    body, h1, h2, h3, h4, h5, p, button, textarea, caption, section, input, ul, ol, li {
+    body, h1, h2, h3, h4, h5, p, button, textarea, caption, section, input, ul, ol, li, pre {
         margin: 0;
         padding: 0;
         font-weight: 400;
